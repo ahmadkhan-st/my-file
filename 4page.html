@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Academic Institute</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Global Settings */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color: #2c3e50; line-height: 1.6; background: #fff; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+
+        /* 1. STICKY NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .logo { font-size: 22px; font-weight: 700; color: #1a2a6c; letter-spacing: 2px; }
+        .nav-links a { text-decoration: none; color: #555; margin-left: 25px; font-weight: 500; font-size: 14px; transition: 0.3s; }
+        .nav-links a:hover { color: #f39c12; }
+
+        /* 2. FULL SIZE HERO (Text Left, Button Right) */
+        .hero {
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            background: linear-gradient(135deg, rgba(26, 42, 108, 0.9), rgba(1, 1, 1, 0.4)), 
+                        url('https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .hero-left { flex: 1.5; }
+        .hero-left h1 { font-size: 60px; margin-bottom: 20px; line-height: 1.1; }
+        .hero-left p { font-size: 18px; opacity: 0.9; border-left: 4px solid #f39c12; padding-left: 20px; }
+        
+        .hero-right { flex: 1; text-align: right; }
+        .btn-glow {
+            background: #f39c12;
+            color: white;
+            padding: 20px 50px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            box-shadow: 0 0 20px rgba(243, 156, 18, 0.4);
+            transition: 0.4s;
+            display: inline-block;
+        }
+        .btn-glow:hover { background: white; color: #1a2a6c; transform: scale(1.05); }
+
+        /* 3. DYNAMIC STATS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 80px 10%;
+            text-align: center;
+            background: #fdfdfd;
+        }
+        .stat-box h2 { font-size: 45px; color: #1a2a6c; margin-bottom: 5px; }
+        .stat-box p { font-weight: 700; color: #f39c12; text-transform: uppercase; font-size: 12px; }
+
+        /* 4. LUXURY CARDS */
+        .programs { padding: 100px 10%; background: #fff; }
+        .programs h2 { text-align: center; font-size: 36px; margin-bottom: 50px; }
+        .card-container { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
+        .card {
+            width: 350px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            transition: 0.4s ease;
+            border: 1px solid #eee;
+        }
+        .card:hover { transform: translateY(-15px); box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+        .card-info { padding: 30px; }
+        .card-info h3 { margin-bottom: 10px; color: #1a2a6c; }
+
+        /* 5. MODERN FOOTER */
+        footer {
+            background: #1a2a6c;
+            color: white;
+            padding: 80px 10% 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 50px;
+        }
+        .footer-col h4 { color: #f39c12; margin-bottom: 25px; font-size: 18px; }
+        .footer-col p { font-size: 14px; opacity: 0.7; margin-bottom: 10px; }
+        .copyright { text-align: center; padding-top: 30px; font-size: 12px; opacity: 0.5; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; justify-content: center; }
+            .hero-right { text-align: center; margin-top: 50px; }
+            .hero-left h1 { font-size: 40px; }
+            .hero-left p { border-left: none; padding-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">ELITE ACADEMY</div>
+        <div class="nav-links">
+            <a href="#">HOME</a>
+            <a href="#">ACADEMICS</a>
+            <a href="#">ADMISSIONS</a>
+            <a href="#">CAMPUS</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-left">
+            <h1>Defining The <br> Future Of Learning</h1>
+            <p>Join a prestigious community where academic excellence meets innovative research. Discover your path to leadership today.</p>
+        </div>
+        <div class="hero-right">
+            <a href="#" class="btn-glow">APPLY FOR 2026</a>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat-box"><h2>150+</h2><p>Programs</p></div>
+        <div class="stat-box"><h2>25k</h2><p>Alumni</p></div>
+        <div class="stat-box"><h2>12</h2><p>Research Labs</p></div>
+        <div class="stat-box"><h2>98%</h2><p>Placement</p></div>
+    </section>
+
+    <section class="programs">
+        <h2>Our Faculty Departments</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Technology">
+                <div class="card-info">
+                    <h3>Technology & Engineering</h3>
+                    <p>Building tomorrow's solutions through advanced robotics and software design.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Business">
+                <div class="card-info">
+                    <h3>Business & Innovation</h3>
+                    <p>Nurturing the next generation of global entrepreneurs and financial experts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>About Elite Academy</h4>
+                <p>Leading the way in higher education for over 50 years. Our campus is a hub for thinkers, dreamers, and doers.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p> 500 University Ave, New York, NY</p>
+                <p> +1 (800) 123-4567</p>
+                <p> admissions@elite.edu</p>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Stay updated with the latest campus news and events.</p>
+                <div style="margin-top:15px; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 5px;">
+                    Email Address...
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Elite Academic Institute. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
